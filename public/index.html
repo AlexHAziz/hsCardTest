@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="myapp.js"></script>
+    <script src="cards.js"></script>
+    <script src="hero.js"></script>
+    <script src="filter.js"></script>
+  </head>
+
+  <body ng-app="myApp">
+    <div ng-controller="hearthstoneHeroController as hhsCtrl">
+      <hero-buttons></hero-buttons>
+      <div ng-controller="filterController as filterCtrl">
+        <!-- <filter-buttons></filter-buttons> -->
+        <div ng-controller="hearthstoneCardController as cardCtrl">
+          <card-description></card-description>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,10 @@
+<img class="img-responsive center-block" src='Hearthstone_Logo.png'>
+<div align="center">
+  <ul class="list-inline">
+    <li ng-repeat="hero in hhsCtrl.heroes">
+      <img class="img-responsive center-block" ng-src = {{hero.heroImage}} ng-click="hhsCtrl.setTab(hero.Name)", height="192" width="128">
+      <button class="btn btn-warning btn-block" ng-click="hhsCtrl.setTab(hero.Name)">{{hero.Name}}</button></p>
+    </li>
+  </ul>
+</div>
+<button type="button" class="btn btn-warning center-block" ng-click="hhsCtrl.setTab(0)">Clear Hero Selection</button>

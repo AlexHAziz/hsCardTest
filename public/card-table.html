@@ -1,0 +1,17 @@
+<div align="center">
+  <ul class='list-inline'>
+    <li
+      ng-repeat="card in cards | orderBy:'name' | orderBy:'mana' | orderBy:'hero'"
+      ng-hide = "card.collectible == false
+      || hhsCtrl.tab == 0
+      || (card.hero != hhsCtrl.tab && card.hero != 'neutral')
+      || card.category == 'hero'
+      || card.category == 'ability'
+      || (filterCtrl.categoryTab != 0 && card.category != filterCtrl.categoryTab)
+      || (filterCtrl.qualityTab != 0 && card.quality != filterCtrl.qualityTab)">
+
+        <img ng-src="{{card.image_url}}", height="192" width="128">
+        <p ng-show = "card.name">{{card.name | limitTo:7}} <span ng-if='card.name.length >= 7'>...</span></p>
+    </li>
+  </ul>
+</div>

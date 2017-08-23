@@ -1,0 +1,17 @@
+<div align="center">
+  Filter by:
+  <u ng-hide = "hhsCtrl.tab == 0"> {{hhsCtrl.tab}}:</u>
+  <u ng-hide = "filterCtrl.categoryTab == 0"> {{filterCtrl.categoryTab}}</u>
+  <u ng-hide = "filterCtrl.categoryTab == 0 || filterCtrl.qualityTab == 0">and</u>
+  <u ng-hide = "filterCtrl.qualityTab == 0"> {{filterCtrl.qualityTab}}</u>
+
+  <ul class='list-inline'>
+    <li ng-repeat = "category in filterCtrl.cardCategorys">
+      <button class="btn btn-warning btn-block" ng-click="filterCtrl.setCategoryTab(category)" style="width:100px">{{category}}</button>
+    </li>
+  </ul>
+  <ul class='list-inline'>
+    <li ng-repeat = "quality in filterCtrl.qualityLevels">{{quality}}: <button id="quality" name="quality" ng-model="$parent.pageSet" category="checkbox" ng-click="filterCtrl.setQualityTab(quality)"></button><li>
+  </ul>
+  <button class="btn btn-warning btn-block" href ng-click="filterCtrl.clearFilters()">Clear Filters</button>
+ </div>
